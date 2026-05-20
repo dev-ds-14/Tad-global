@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude &amp; GenAI Mastery — TAD Global Branding</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #111010;
+    --surface: #1a1918;
+    --border: #2e2c2a;
+    --text: #e8e4df;
+    --muted: #7a756f;
+    --gold: #F5A623;
+    --red: #e05252;
+    --green: #52b788;
+    --blue: #5b9bd5;
+
+    --px: clamp(20px, 6vw, 120px);
+    --py: clamp(28px, 4vw, 56px);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(13px, 1.4vw, 15px);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page { width: 100%; }
+
+  /* ── TOP BANNER ── */
+  .top-banner {
+    background: var(--gold);
+    color: #111;
+    font-size: clamp(10px, 1.3vw, 12px);
+    font-weight: 600;
+    padding: 10px var(--px);
+    text-align: center;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    padding: var(--py) var(--px) clamp(24px, 3vw, 36px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-meta {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+
+  .meta-tag {
+    font-size: clamp(10px, 1.1vw, 11px);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 4px 12px;
+    border-radius: 4px;
+  }
+
+  .header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(44px, 8vw, 80px);
+    line-height: 0.95;
+    color: var(--text);
+    letter-spacing: 0.01em;
+  }
+
+  .header h1 span { color: var(--gold); }
+
+  .header-sub {
+    font-size: clamp(13px, 1.6vw, 16px);
+    color: var(--muted);
+    margin-top: 14px;
+    max-width: 600px;
+    line-height: 1.65;
+  }
+
+  .header-specs {
+    display: flex;
+    gap: clamp(20px, 4vw, 40px);
+    margin-top: clamp(20px, 3vw, 32px);
+    flex-wrap: wrap;
+  }
+
+  .spec { display: flex; flex-direction: column; gap: 3px; }
+
+  .spec-label {
+    font-size: clamp(10px, 1.1vw, 11px);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+
+  .spec-val {
+    font-size: clamp(13px, 1.5vw, 15px);
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  /* ── PILLAR ── */
+  .pillar {
+    padding: var(--py) var(--px) 0;
+  }
+
+  .pillar-last { padding-bottom: var(--py); }
+
+  .pillar-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: clamp(18px, 2.5vw, 28px);
+    padding-bottom: clamp(16px, 2vw, 24px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pillar-num-badge {
+    background: var(--gold);
+    color: #111;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(11px, 1.2vw, 13px);
+    padding: 3px 9px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 4px;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+
+  .pillar-num-badge.advanced {
+    background: var(--red);
+    color: #fff;
+  }
+
+  .pillar-kicker {
+    font-size: clamp(10px, 1.1vw, 11px);
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .pillar-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1;
+    color: var(--text);
+    letter-spacing: 0.02em;
+  }
+
+  .pillar-desc {
+    font-size: clamp(12.5px, 1.4vw, 14px);
+    color: var(--muted);
+    margin-top: 6px;
+    line-height: 1.65;
+  }
+
+  /* ── MODULE BLOCK ── */
+  .module-block {
+    margin-bottom: clamp(14px, 1.8vw, 20px);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: clamp(16px, 2vw, 22px) clamp(16px, 2.2vw, 24px);
+  }
+
+  .module-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .module-name {
+    font-size: clamp(13.5px, 1.6vw, 15px);
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .module-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-size: clamp(10px, 1.1vw, 11px);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .tag-hands     { background: rgba(82,183,136,0.15); color: #52b788; }
+  .tag-live      { background: rgba(245,166,35,0.15);  color: #F5A623; }
+  .tag-tools     { background: rgba(91,155,213,0.15);  color: #5b9bd5; }
+  .tag-framework { background: rgba(224,82,82,0.15);   color: #e05252; }
+  .tag-advanced  { background: rgba(224,82,82,0.18);   color: #e05252; }
+
+  .module-desc {
+    font-size: clamp(12.5px, 1.4vw, 13.5px);
+    color: var(--muted);
+    margin-bottom: 14px;
+    line-height: 1.65;
+  }
+
+  .module-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(5px, 0.8vw, 8px);
+  }
+
+  .module-bullets li {
+    font-size: clamp(12.5px, 1.4vw, 13.5px);
+    color: var(--muted);
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .module-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--border);
+    font-size: 12px;
+    top: 1px;
+  }
+
+  /* OUTCOME CALLOUT inside module */
+  .module-outcome {
+    margin-top: clamp(14px, 1.8vw, 20px);
+    padding: clamp(12px, 1.5vw, 16px) clamp(14px, 1.8vw, 20px);
+    border-left: 3px solid var(--gold);
+    background: rgba(245,166,35,0.06);
+    border-radius: 0 6px 6px 0;
+  }
+
+  .module-outcome-label {
+    font-size: clamp(10px, 1.1vw, 11px);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .module-outcome-text {
+    font-size: clamp(12.5px, 1.4vw, 13.5px);
+    color: var(--text);
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  /* ── PILLAR DIVIDER ── */
+  .pillar-divider {
+    height: 1px;
+    background: var(--border);
+    margin: clamp(24px, 3vw, 40px) var(--px) 0;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: clamp(14px, 2vw, 20px) var(--px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  footer p {
+    font-size: clamp(11px, 1.2vw, 12px);
+    color: var(--muted);
+  }
+
+  .footer-brand {
+    font-weight: 600;
+    color: var(--gold);
+  }
+
+  /* ── DESKTOP ── */
+  @media (min-width: 901px) {
+    .deliverables-grid { grid-template-columns: repeat(3, 1fr); }
+    .header h1 { font-size: clamp(72px, 7vw, 100px); }
+    .pillar-title { font-size: clamp(40px, 4.5vw, 56px); }
+    .header-sub { font-size: 16px; max-width: 680px; }
+    .module-name { font-size: 15px; }
+    .module-bullets li { font-size: 13.5px; }
+  }
+
+  /* ── TABLET ── */
+  @media (min-width: 601px) and (max-width: 900px) {
+    .deliverables-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 600px) {
+    .deliverables-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; align-items: flex-start; }
+    .module-top { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- TOP BANNER -->
+  <div class="top-banner">
+    Advanced Claude &amp; Generative AI Mastery &nbsp;·&nbsp; 2-Day Onsite Intensive &nbsp;·&nbsp; Hyderabad
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-meta">
+      <span class="meta-tag">TAD Global Branding</span>
+      <span class="meta-tag">Advanced AI Training</span>
+      <span class="meta-tag">Digital Scholar</span>
+    </div>
+    <h1>Claude &amp; GenAI<br><span>Mastery</span></h1>
+    <p class="header-sub">A 2-day advanced intensive that transforms how TAD Global creates, operates, and wins — using Claude and Generative AI as execution infrastructure, not just a writing tool.</p>
+    <div class="header-specs">
+      <div class="spec">
+        <span class="spec-label">Duration</span>
+        <span class="spec-val">2-Day Intensive</span>
+      </div>
+      <div class="spec">
+        <span class="spec-label">Format</span>
+        <span class="spec-val">Onsite</span>
+      </div>
+      <div class="spec">
+        <span class="spec-label">Location</span>
+        <span class="spec-val">Hyderabad</span>
+      </div>
+      <div class="spec">
+        <span class="spec-label">Level</span>
+        <span class="spec-val">Advanced</span>
+      </div>
+      <div class="spec">
+        <span class="spec-label">Audience</span>
+        <span class="spec-val">Full Agency Team</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 03 -->
+  <div class="pillar">
+    <div class="pillar-header">
+      <div class="pillar-num-badge">MODULE 03</div>
+      <div class="pillar-heading">
+        <p class="pillar-kicker">Memory · Skills · Delegation</p>
+        <h2 class="pillar-title">Claude as Your Agency's Brain</h2>
+        <p class="pillar-desc">Build a version of Claude that already knows TAD, thinks like TAD, and writes like TAD — without being told twice. Systematise quality so it is no longer person-dependent.</p>
+      </div>
+    </div>
+
+    <div class="module-block">
+      <div class="module-top">
+        <span class="module-name">Brain Imprint for the Agency</span>
+        <div class="module-tags">
+          <span class="tag tag-framework">Proprietary</span>
+          <span class="tag tag-hands">Hands-On</span>
+        </div>
+      </div>
+      <ul class="module-bullets">
+        <li>79-question extraction that captures TAD's voice, creative standards, and strategic POV</li>
+        <li>Every Claude output sounds like a senior TAD strategist — not a generic AI</li>
+        <li>Covers tone, non-negotiables, client relationship style, and creative philosophy</li>
+        <li>Built during the session — deployed the same day</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <div class="module-top">
+        <span class="module-name">3-Layer Memory Architecture</span>
+        <div class="module-tags">
+          <span class="tag tag-framework">Proprietary</span>
+          <span class="tag tag-live">Live Demo</span>
+        </div>
+      </div>
+      <ul class="module-bullets">
+        <li>Layer 1 — Global preferences: who TAD is, tone, and non-negotiables</li>
+        <li>Layer 2 — Project-specific context files: one per client, one per campaign</li>
+        <li>Layer 3 — Skills: reusable instruction sets that auto-load when relevant</li>
+        <li>Open Claude for Vamsiram and it already knows the brand, campaign history, and client's approval style</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <div class="module-top">
+        <span class="module-name">TAR Framework for Building Agency Skills</span>
+        <div class="module-tags">
+          <span class="tag tag-framework">Proprietary</span>
+          <span class="tag tag-hands">Hands-On</span>
+        </div>
+      </div>
+      <p class="module-desc">Trigger, Action, Result. The three-part structure for building Skills that Claude executes perfectly every time — without re-explaining.</p>
+      <ul class="module-bullets">
+        <li>Live build: Rishi constructs a "Client Brief to Campaign Strategy" Skill from scratch</li>
+        <li>Live build: "Weekly Status Report" Skill — drafted in Claude before the account manager types a word</li>
+        <li>Rule of thumb: if TAD does a task more than twice, it becomes a Skill</li>
+        <li>Every participant leaves with 2 working Skills ready to deploy</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <div class="module-top">
+        <span class="module-name">CLAUDE.md, Project Architecture &amp; the Pipeline Method</span>
+        <div class="module-tags">
+          <span class="tag tag-live">Live Demo</span>
+          <span class="tag tag-tools">Systems</span>
+        </div>
+      </div>
+      <ul class="module-bullets">
+        <li>CLAUDE.md — the project-level context document every team member inherits</li>
+        <li>Structure Claude projects so every team member on the same account gets identical quality</li>
+        <li>Pipeline Method: Raw input → Context → Deliverable → Archive</li>
+        <li>60% less back-and-forth with clients when the pipeline is set up correctly</li>
+      </ul>
+      <div class="module-outcome">
+        <div class="module-outcome-label">What TAD walks away with</div>
+        <div class="module-outcome-text">Claude that already knows every client. Skills that replace briefing junior team members. A system where output quality is consistent — not person-dependent.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pillar-divider"></div>
+
+  <!-- MODULE 04 -->
+  <div class="pillar">
+    <div class="pillar-header">
+      <div class="pillar-num-badge">MODULE 04</div>
+      <div class="pillar-heading">
+        <p class="pillar-kicker">Visuals · Video · Pre-Validation</p>
+        <h2 class="pillar-title">Generative AI for Creative Production</h2>
+        <p class="pillar-desc">Beyond moodboards. Give TAD's creative team the tools to generate finished-looking campaign concepts before a single crew is booked — and validate them with data before the client sees them.</p>
+      </div>
+    </div>
+
+    <div class="module-block">
+      <div class="module-top">
+        <span class="module-name">NanoBanana Pro — Production-Ready Ad Creatives</span>
+        <div class="module-tags">
+          <span class="tag tag-tools">Tools</span>
+          <span class="tag tag-live">Live Demo</span>
+        </div>
+      </div>
+      <p class="module-desc">The only AI that renders text correctly on images. Built for production-grade campaign output, not experimentation.</p>
+      <ul class="module-bullets">
+        <li>JSON-based prompt architecture with 18 colour palettes, 12 marketing angles, and 8 layout patterns</li>
+        <li>Generates campaign variations at scale — real estate hoardings, jewellery visuals, automotive print ads with live overlaid copy</li>
+        <li>Lighting manipulation and atmosphere control for campaign consistency across formats</li>
+        <li>Rishi's proprietary JSON prompt creator Skill — structured to generate production assets programmatically</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <div class="module-top">
+        <span class="module-name">Higgsfield &amp; Veo 3 — Motion and Video Generation</span>
+        <div class="module-tags">
+          <span class="tag tag-tools">Tools</span>
+          <span class="tag tag-live">Live Demo</span>
+        </div>
+      </div>
+      <ul class="module-bullets">
+        <li>Concept reels built before a single crew is booked — for client presentations and internal alignment</li>
+        <li>Higgsfield: cinematic character motion and photorealistic scene generation</li>
+        <li>Veo 3: photorealistic environments and brand film generation with synchronised audio</li>
+        <li><strong style="color:var(--text);">Live demo:</strong> a 30-second brand film concept built from a brief in under 20 minutes</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <div class="module-top">
+        <span class="module-name">HeyGen — Spokesperson Videos and Multilingual Content</span>
+        <div class="module-tags">
+          <span class="tag tag-tools">Tools</span>
+          <span class="tag tag-live">Live Demo</span>
+        </div>
+      </div>
+      <ul class="module-bullets">
+        <li>AI avatars for client testimonials, product explainers, and PR videos</li>
+        <li>Video translation with lip sync — for brands reaching pan-India audiences</li>
+        <li>Consistent spokesperson content without a repeat shoot</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <div class="module-top">
+        <span class="module-name">Midjourney + NanoBanana Combo &amp; Attention Insights Pre-Validation</span>
+        <div class="module-tags">
+          <span class="tag tag-tools">Tools</span>
+          <span class="tag tag-framework">Workflow</span>
+        </div>
+      </div>
+      <ul class="module-bullets">
+        <li>Midjourney sets the art direction and visual mood. NanoBanana adds production-ready text and copy overlays</li>
+        <li>Campaign visual from brand brief to final asset — in one working session</li>
+        <li>Attention Insights: AI predictive eye-tracking at 96% accuracy before the client sees the work</li>
+        <li>Where does the eye go first on this hoarding? Is the headline getting read before the logo?</li>
+        <li>TAD presents work with data backing — not just creative conviction</li>
+      </ul>
+      <div class="module-outcome">
+        <div class="module-outcome-label">What TAD walks away with</div>
+        <div class="module-outcome-text">A visual production pipeline that cuts concept delivery time by 70%. Client presentations with finished-looking visuals from day one. A pre-validation system that reduces revision cycles.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pillar-divider"></div>
+
+  <!-- MODULE 05 -->
+  <div class="pillar">
+    <div class="pillar-header">
+      <div class="pillar-num-badge">MODULE 05</div>
+      <div class="pillar-heading">
+        <p class="pillar-kicker">Multiplication · Voice · Repurposing</p>
+        <h2 class="pillar-title">Generative AI for Content at Scale</h2>
+        <p class="pillar-desc">One approved campaign idea becomes every format TAD needs — adapted by platform, audience, and tone — without starting from scratch each time.</p>
+      </div>
+    </div>
+
+    <div class="module-block">
+      <div class="module-top">
+        <span class="module-name">The Content Multiplication Engine</span>
+        <div class="module-tags">
+          <span class="tag tag-framework">Proprietary</span>
+          <span class="tag tag-hands">Hands-On</span>
+        </div>
+      </div>
+      <p class="module-desc">One brief. Thirty pieces. Structured Claude workflow built during the session — 23 minutes to set up, then it runs.</p>
+      <ul class="module-bullets">
+        <li>10 social captions, 5 carousel scripts, 3 reel scripts, 2 blog angles, 1 press note, 1 client email</li>
+        <li>All adapted by platform, audience, and tone inside a single Claude workflow</li>
+        <li>Hands-on: participants build the engine for one real TAD client during the session</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <div class="module-top">
+        <span class="module-name">NotebookLM as the Brand Knowledge Base</span>
+        <div class="module-tags">
+          <span class="tag tag-tools">Tools</span>
+          <span class="tag tag-live">Live Demo</span>
+        </div>
+      </div>
+      <ul class="module-bullets">
+        <li>Every client's brand guidelines, campaign history, competitor analysis, and category research locked in</li>
+        <li>Claude pulls from this verified source before generating — zero hallucinations</li>
+        <li>Every output grounded in actual brand context, not generic AI defaults</li>
+        <li>Live demo: a real estate brand scenario built from TAD's own client category</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <div class="module-top">
+        <span class="module-name">ElevenLabs, Submagic &amp; Opus Clips</span>
+        <div class="module-tags">
+          <span class="tag tag-tools">Tools</span>
+          <span class="tag tag-live">Live Demo</span>
+        </div>
+      </div>
+      <ul class="module-bullets">
+        <li>ElevenLabs: brand voice cloning for consistent audio across radio ads, explainer videos, and social reels</li>
+        <li>One approved voice talent recording becomes an infinite asset — eliminate repeat voiceover sessions</li>
+        <li>Submagic: AI-powered video editing with auto-captions, B-roll, and platform-specific formatting</li>
+        <li>Opus Clips: extract 8 social clips from one 3-minute brand film — automatic</li>
+        <li><strong style="color:var(--text);">Live demo:</strong> one video in, eight platform-ready outputs out</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <div class="module-top">
+        <span class="module-name">Client Content SOP Library</span>
+        <div class="module-tags">
+          <span class="tag tag-framework">Systems</span>
+          <span class="tag tag-hands">Hands-On</span>
+        </div>
+      </div>
+      <ul class="module-bullets">
+        <li>Every approved tone, format, and output style stored as a Claude Skill per client</li>
+        <li>A new team member on Apollo Homecare on day one gets the same output quality as a year-one team member</li>
+        <li>Quality becomes structural — not dependent on who is at the desk</li>
+      </ul>
+      <div class="module-outcome">
+        <div class="module-outcome-label">What TAD walks away with</div>
+        <div class="module-outcome-text">A content system that runs on structure, not heroics. Client-specific output libraries. Video assets multiplied from every production without additional shoots.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pillar-divider"></div>
+
+  <!-- MODULE 06 -->
+  <div class="pillar">
+    <div class="pillar-header">
+      <div class="pillar-num-badge advanced">MODULE 06</div>
+      <div class="pillar-heading">
+        <p class="pillar-kicker">MCP · Claude Code · Automation</p>
+        <h2 class="pillar-title">MCP and Claude Code</h2>
+        <p class="pillar-desc">The most advanced module in the program. Move TAD from using AI to write, to using AI to operate — connected to live data, taking action without being asked.</p>
+      </div>
+    </div>
+
+    <div class="module-block">
+      <div class="module-top">
+        <span class="module-name">MCP — The USB-C for AI</span>
+        <div class="module-tags">
+          <span class="tag tag-tools">Tools</span>
+          <span class="tag tag-live">Live Demo</span>
+        </div>
+      </div>
+      <p class="module-desc">One connection protocol, hundreds of tools. Before MCP, every tool connection needed a developer. After MCP, it takes 10 minutes.</p>
+      <ul class="module-bullets">
+        <li>Live demo of Rishi's own setup: Claude connected simultaneously to Gmail, Notion, Google Calendar, Slack, Google Drive, Semrush, and WordPress</li>
+        <li>Claude reads the latest client brief from Drive and drafts the strategy — automatically</li>
+        <li>Claude scans Gmail threads and surfaces all pending client approvals</li>
+        <li>Claude pulls campaign performance from Sheets and generates the client report — without being asked</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <div class="module-top">
+        <span class="module-name">Building Custom MCP Servers with Claude Code</span>
+        <div class="module-tags">
+          <span class="tag tag-advanced">Advanced</span>
+          <span class="tag tag-hands">Live Build</span>
+        </div>
+      </div>
+      <p class="module-desc">Rishi has personally built MCP servers for Excalidraw, Meta Ads, and Screenshot capture — without a developer. TAD can do the same. Claude Code writes the code.</p>
+      <ul class="module-bullets">
+        <li>How Claude Code works: AI in the terminal that executes code and builds software</li>
+        <li>Non-developer approach: Rishi's team member Eugene uses Claude Code daily to build tools</li>
+        <li>TAD builds a custom MCP server for their own project management system during the session</li>
+        <li>No coding knowledge needed — Claude Code writes it, you configure it</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <div class="module-top">
+        <span class="module-name">Multi-Agent Orchestration</span>
+        <div class="module-tags">
+          <span class="tag tag-advanced">Advanced</span>
+          <span class="tag tag-live">Live Demo</span>
+        </div>
+      </div>
+      <ul class="module-bullets">
+        <li>One Claude instance as strategist. One as writer. One as quality checker — running in parallel</li>
+        <li>Each passes outputs to the next — a content production system where Claude manages the workflow</li>
+        <li>Token management: how to prevent pipelines from breaking on large documents</li>
+        <li>Team setups: how multiple people at TAD can each have personalised Claude environments that share a common knowledge base</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <div class="module-top">
+        <span class="module-name">Scheduled Tasks — The Agency That Never Sleeps</span>
+        <div class="module-tags">
+          <span class="tag tag-tools">Automation</span>
+          <span class="tag tag-hands">Live Build</span>
+        </div>
+      </div>
+      <ul class="module-bullets">
+        <li>Set Claude to run every Monday at 7 AM: pull all client campaign data, flag accounts that missed weekly KPIs, draft client update emails, send a Slack team summary</li>
+        <li>The account manager arrives at 9 AM with everything already done</li>
+        <li>Live setup during the session — participants leave with at least one scheduled task running</li>
+      </ul>
+      <div class="module-outcome">
+        <div class="module-outcome-label">What TAD walks away with</div>
+        <div class="module-outcome-text">Claude operating on live agency data. A working custom MCP connection for one real workflow. Scheduled tasks deployed before participants leave the room. A technical foundation to build on — without a development team.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pillar-divider"></div>
+
+  <!-- MODULE 07 -->
+  <div class="pillar pillar-last">
+    <div class="pillar-header">
+      <div class="pillar-num-badge">MODULE 07</div>
+      <div class="pillar-heading">
+        <p class="pillar-kicker">Research · Pitching · Positioning</p>
+        <h2 class="pillar-title">AI for New Business and Pitching</h2>
+        <p class="pillar-desc">Win pitches faster. Charge more. Differentiate on intelligence. TAD's leadership walks into every pitch more prepared than any competitor.</p>
+      </div>
+    </div>
+
+    <div class="module-block">
+      <div class="module-top">
+        <span class="module-name">Deep Research for Pitch Intelligence</span>
+        <div class="module-tags">
+          <span class="tag tag-tools">Tools</span>
+          <span class="tag tag-live">Live Demo</span>
+        </div>
+      </div>
+      <ul class="module-bullets">
+        <li>Perplexity and Claude's Deep Research mode used together — a complete competitive and category intelligence brief in under 40 minutes</li>
+        <li>Before TAD walks into a pitch, they know more about the client's market than the client does</li>
+        <li>Live demo: a research run on a real estate brand scenario from TAD's client base</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <div class="module-top">
+        <span class="module-name">Gamma for Pitch Decks That Close</span>
+        <div class="module-tags">
+          <span class="tag tag-framework">CQA Framework</span>
+          <span class="tag tag-live">Live Build</span>
+        </div>
+      </div>
+      <p class="module-desc">The CQA Framework: Context, Question, Answer. The structure that makes every AI-built presentation land with a decision-maker.</p>
+      <ul class="module-bullets">
+        <li>Full pitch decks built in 18 minutes using Gamma with Claude as the content engine</li>
+        <li>TAD's pitch output speed: from 3 days to 3 hours</li>
+        <li>Live build: complete pitch deck for a mock client during the session</li>
+      </ul>
+    </div>
+
+    <div class="module-block">
+      <div class="module-top">
+        <span class="module-name">Positioning TAD as an AI-First Agency &amp; AI-Assisted Proposal Writing</span>
+        <div class="module-tags">
+          <span class="tag tag-framework">Strategy</span>
+          <span class="tag tag-hands">Hands-On</span>
+        </div>
+      </div>
+      <ul class="module-bullets">
+        <li>How to talk about AI capability in client conversations without sounding like everyone else</li>
+        <li>The new business argument: TAD brings faster delivery, more iterations, and data-backed creative decisions</li>
+        <li>Claude builds scoped proposals, capability documents, and case study write-ups using TAD's actual past work as input</li>
+        <li>Every proposal customised to the client's category and objectives — not templated</li>
+        <li><strong style="color:var(--text);">Live demo:</strong> a full proposal outline from a one-paragraph client brief</li>
+      </ul>
+      <div class="module-outcome">
+        <div class="module-outcome-label">What TAD walks away with</div>
+        <div class="module-outcome-text">A pitch intelligence system. A presentation build workflow that takes hours, not days. A clear articulation of AI as a competitive advantage — not a cost-cutting tool.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Prepared by <span class="footer-brand">Digital Scholar</span> for TAD Global Branding · May 2026</p>
+    <p>bde@digitalscholar.in &nbsp;·&nbsp; digitalscholar.in/corporate-training-2/</p>
+  </footer>
+
+</div>
+</body>
+</html>
